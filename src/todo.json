@@ -1,0 +1,20 @@
+{
+    "todos":[
+        {
+            "categorie": null,
+            "dateTime": "2025,3,5,12,20",
+            "name": "Sport",
+            "durationInMinutes": 30,
+            "haveAlert": false,
+            "isFinished": false
+            },{
+            "categorie": "Wichtig",
+            "dateTime": "2025,3,5,15,50",
+            "name": "Arzt Termin",
+            "durationInMinutes": null,
+            "haveAlert": true,
+            "isFinished": false
+
+        },{}
+    ]
+}
