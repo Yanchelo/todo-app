@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {
     "todos":[
         {
@@ -17,4 +18,25 @@
 
         },{}
     ]
+=======
+{
+    "todos":[
+        {
+            "categorie": null,
+            "dateTime": "2025,3,5,12,20",
+            "name": "Sport",
+            "durationInMinutes": 30,
+            "haveAlert": false,
+            "isFinished": false
+            },{
+            "categorie": "Wichtig",
+            "dateTime": "2025,3,5,15,50",
+            "name": "Arzt Termin",
+            "durationInMinutes": null,
+            "haveAlert": true,
+            "isFinished": false
+
+        },{}
+    ]
+>>>>>>> b9f8d361d302f0307c0730ed24accc727e76182a
 }

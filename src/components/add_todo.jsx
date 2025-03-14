@@ -1,6 +1,7 @@
 import '../App.css'
-import { useState } from 'react';
 
+
+// eslint-disable-next-line react/prop-types
 export default function AddToDo( {text, setText} ){
     const inputStyle={
             fontSize: '16px',
@@ -35,6 +36,7 @@ export default function AddToDo( {text, setText} ){
             transition: 'background-color 0.3s, transform 0.2s',
         };
   
+// eslint-disable-next-line no-unused-vars
 const x = (text)=>{
     setText(text);
 }
