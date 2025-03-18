@@ -1,46 +1,43 @@
-/* eslint-disable react/no-unescaped-entities */
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-// import viteLogo from '/vite.svg'
-import Profile from './profile.jsx'
-import TodayComponent from './Today.jsx'
-
+// import { useState } from 'react'
 import './App.css'
+// import todos from './todo.json';
+import AppHeader from './components/app_header.jsx';
 
 function App() {
-  const [count, setCount] = useState(1)
-
+  // const [count, setCount] = useState(1)
+const mainStyle={
+  height:'auto'
+};
   return (
     <>
+      <div style={mainStyle}>
+
+      {/* <Profile/> */}
+      <h1>Yan&rsquo;s todoliste</h1>
+   
+     
       <div>
-        {/* <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a> */}
-        <a href="https://react.dev" target="_blank" rel="noreferrer">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      {/* <div className='TodayComponent'> */}
+      <AppHeader    />
+      {/* {
+        // Ich brauche eine liste mit Categorien oder mit allen todos.
+        // Diese Liste muss ich dann
+        todos.map((group)  =>   <ToDoGroup {group}/>
+        )
+      } */}
       </div>
       {/* <Profile/> */}
-      <h1>Vite + React</h1>
-      <h3>Dies ist Yan's erste React App</h3>
-      <div className="card">
+      </div>
+      
+    </>
+  )
+}
+export default App
+   {/* <div className="card">
         <button onClick={() => setCount((count) => count * 9)}>
           count is {count}
         </button>
         <p>
           Edit <code>src/App.jsx</code> and save to test HMR
         </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-      <div>
-      {/* <div className='TodayComponent'> */}
-      <TodayComponent/>
-      </div>
-      <Profile/>
-      
-    </>
-  )
-}
-export default App
+      </div> */}
