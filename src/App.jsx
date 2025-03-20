@@ -1,43 +1,34 @@
-// import { useState } from 'react'
+import { useState } from 'react'
 import './App.css'
-// import todos from './todo.json';
+import * as todos from './todo.json';
 import AppHeader from './components/app_header.jsx';
+import ToDoGroup from './components/todo_group.jsx';
 
 function App() {
-  // const [count, setCount] = useState(1)
-const mainStyle={
-  height:'auto'
-};
-  return (
-    <>
-      <div style={mainStyle}>
+  const [groups, setToDo] = useState(todos["todos"]);
 
-      {/* <Profile/> */}
+const doSomething = () =>{ 
+  setToDo( );
+};
+
+  return (
+  
+      <div >
       <h1>Yan&rsquo;s todoliste</h1>
-   
-     
       <div>
-      {/* <div className='TodayComponent'> */}
-      <AppHeader    />
-      {/* {
-        // Ich brauche eine liste mit Categorien oder mit allen todos.
-        // Diese Liste muss ich dann
-        todos.map((group)  =>   <ToDoGroup {group}/>
-        )
-      } */}
+        {/* <div className='TodayComponent'> */}
+         <AppHeader/>
+          {/* // Ich brauche eine liste mit Categorien oder mit allen todos.
+          // Diese Liste muss ich dann */}
+          {
+            groups.map((groupe,index) => (
+              <ToDoGroup key= {index} group= {groupe} />
+            ))
+          }
+        
+        </div>
       </div>
-      {/* <Profile/> */}
-      </div>
-      
-    </>
+    
   )
 }
 export default App
-   {/* <div className="card">
-        <button onClick={() => setCount((count) => count * 9)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div> */}

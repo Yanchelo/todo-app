@@ -2,23 +2,27 @@
     "todos":[
         {
             "categorie": "Heute",
-            "entries":{
-                "name": "Sport",
-                "isFinished": false
-            }
-        },{
+            "entries":[
+                {"name": "Sport", "isFinished": false },
+                {"name": "Dehnen", "isFinished": true }
+            ]
+        },
+        {
             "categorie": "Wichtig",
-            "entries":{
-                "name": "Arzt Termin",
-                "isFinished": false
-            }
-            
+            "entries":[
+                {"name": "Arzt Termin","isFinished": false}
+            ]
         },{
             "categorie": "Schule",
-            "entries":{
-                "name": "Hausaufgaben",
-                "isFinished": false
-            }
+            "entries":[
+                {"name": "Hausaufgaben", "isFinished": false}
+            ]
+        }
+        ,{
+            "categorie": "Test",
+            "entries":[
+
+            ]
         }
     ]
 }

@@ -22,17 +22,20 @@ let myStyle = {
 };
     const headerStyle = {
         margin: '0 auto',
-        // backgroundColor:'#6AC04F',
+        backgroundColor:'#6AC04F',
+        padding: '10px 20px 0px 20px',
         // cursor: isActive ? 'pointer' : 'not-allowed',
         border: 'none',
         display: 'flex',
         flexDirection: 'column',
         height:'80px',
-        width:'402px'
+        // width:'402px',
+        fontSize: '24px',
     };
 
     const titleStyle={
     //    margin: '40 40 40 auto'
+       
        margin: margin,
        height: 'fit-content'
     }
@@ -59,13 +62,13 @@ const deleteOption = ()=>{
                     {/* Zweites Element, ist ein Div um die UI zu stylen */}
                 
                     <div>
-                        <img src={deleteButton} width={36} height={36} style={{ margin: '7px 20px 7px 10px' }} alt="Garbage"onClick={deleteOption}  />
+                        <img src={deleteButton} width={30} height={30} style={{ margin: '0px 25px 0px 0px' }} alt="Garbage" onClick={deleteOption}  />
 
                         {/* <button style={{ display: "none"}}>  */}
                             {
                                 isActive?
-                            <img src={arrowDown} width={36} height={36} style={{ margin: '7px 20px 7px 10px' }}  alt="Open" onClick = {onclicked}   />:
-                            <img src={arrowUp} width={36} height={36} style={{ margin: '7px 20px 7px 10px' }}  alt="Open" onClick = {onclicked}   />
+                            <img src={arrowDown} width={30} height={30} style={{ margin: '0px 0px 0px 0px' }}  alt="Close" onClick = {onclicked}   />:
+                            <img src={arrowUp} width={30} height={30} style={{ margin: '0px 0px 0px 0px' }}  alt="Open" onClick = {onclicked}   />
                             }
                         {/* </button> */}
                     </div>    
