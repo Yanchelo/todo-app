@@ -8,7 +8,7 @@ import { useState } from 'react';
 import AddToDo from './components/add_todo'
 
 
-export default function ToDoHeader( {title, fontSize, height, width, margin,}){
+export default function ToDoHeader( {title, fontSize, height, width, margin}){
     let [ isActive, setActive] = useState(false);
     let [ todoText, setText] =useState('');
     
@@ -73,7 +73,7 @@ const deleteOption = ()=>{
                         {/* </button> */}
                     </div>    
                 </div>
-                {isActive && <AddToDo todoText ={todoText} setText = {setText} />}
+                {isActive && <AddToDo todoText ={todoText} setText = {setText}  />}
             </div>
  
 }

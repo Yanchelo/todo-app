@@ -1,18 +1,20 @@
 
+import { PropTypes } from 'prop-types';
 import '../App.css';
 import arrowUp from '../assets/up-arrow-white.png';
 import { useState } from 'react';
 import AddToDo from '../components/add_todo'
 
 
-export default function CreateGroup( ){
+export default function CreateGroup(){
     let [ isActive, setActive] = useState(false);
     let [ todoText, setText] =useState('');
     
+
 let myStyle = {
     fontSize: '24',
-    height:'100px',
-    padding:'10px 0px 5px 0px',
+    height:'30px',
+    padding:'10px 0px 15px 0px',
     display: 'flex',
     justifyContent: 'space-between',
     flexDirection: 'row',
@@ -37,7 +39,7 @@ let myStyle = {
 
   const  onclicked =()=>{
     setActive(!isActive)
-    setText('');
+
     return;
    }
 
@@ -50,8 +52,7 @@ return <div style={headerStyle} >
             {/* Zweites Element, ist ein Div um die UI zu stylen */}
                 <img src={arrowUp} width={30} height={30} style={{ margin: '0px 0px 0px 0px' }}  alt="Open" onClick = {onclicked}   />                      
         </div>
-      <AddToDo todoText ={todoText} setText = {setText} />
+      <AddToDo todoText ={todoText} setText = {setText}  />
     </div>
  
 }
-
