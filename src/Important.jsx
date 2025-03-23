@@ -1,5 +1,5 @@
 
-import ToDoHeader from './TodoHeader';
+import ToDoHeader from './components/TodoHeader';
 export default function ImportentComponent() 
 {
 <ToDoHeader
