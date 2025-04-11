@@ -6,12 +6,14 @@ import drash from '../assets/delete-png-red.png'
 import arrowUp from '../assets/up-arrow-white.png';
 import { useState } from 'react';
 import AddToDo from './add_todo'
+import { useTodo } from '../todo_component'; 
 
 
 
 
 export default function ToDoHeader( {title}){
     let [ isActive, setActive] = useState(false);
+    const { deleteCategory } = useTodo();
   
 
     const headerStyle = {
@@ -33,6 +35,8 @@ const deleteOption = ()=>{
         setText('');
         return;
     }
+    deleteCategory(title)
+
     return;
 }
 

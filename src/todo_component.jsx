@@ -13,6 +13,7 @@ export const TodoProvider = ({ children }) => {
   const updateToDos = (groupName) => {
     setToDo([...groups, { 'categorie': groupName, entries: [] }]);
   };
+  
 
   const addEntryToCategory = (categoryName, newEntry) => {
     setToDo((prevGroups) =>
@@ -23,10 +24,29 @@ export const TodoProvider = ({ children }) => {
       )
     );
   };
+  const deleteCategory = (categoryName) => {
+    setToDo((prevGroups) =>
+      prevGroups.filter((group) => group.categorie !== categoryName)
+    );
+  };
+
+  const deleteEntryFromCategory = (categoryName, entryName) => {
+    setToDo((prevGroups) =>
+      prevGroups.map((group) => {
+        if (group.categorie === categoryName) {
+          return {
+            ...group,
+            entries: group.entries.filter((entry) => entry.name !== entryName)
+          };
+        }
+        return group;
+      })
+    );
+  };
 
 
   return (
-    <TodoContext.Provider value={{ groups, updateToDos , addEntryToCategory}}>
+    <TodoContext.Provider value={{ groups, updateToDos , addEntryToCategory, deleteCategory,deleteEntryFromCategory}}>
       {children}
     </TodoContext.Provider>
   );

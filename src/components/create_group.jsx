@@ -1,41 +1,54 @@
-
-import { PropTypes } from 'prop-types';
 import '../App.css';
 import arrowUp from '../assets/up-arrow-white.png';
 import { useState } from 'react';
 import AddToDo from '../components/add_todo'
+import add from '../assets/plus-icon.png';
+import { useTodo } from '../todo_component'; 
 
 
 export default function CreateGroup(){
-    let [ isActive, setActive] = useState(false);
-    let [ todoText, setText] =useState('');
-    
 
-let myStyle = {
-    fontSize: '24',
-    height:'30px',
-    padding:'10px 0px 15px 0px',
-    display: 'flex',
-    justifyContent: 'space-between',
-    flexDirection: 'row',
-    backgroundColor:'#28AA00',
-};
+    let [ isActive, setActive] = useState(false);
+    const { updateToDos } = useTodo();
+    const[text, setState]= useState('');
+
+    let myStyle = {
+        fontSize: '24',
+        height:'30px',
+        padding:'10px 0px 15px 0px',
+        display: 'flex',
+        justifyContent: 'space-between',
+        flexDirection: 'row',
+        backgroundColor:'#28AA00',
+    };
     const headerStyle = {
         backgroundColor:'#28AA00',
-        padding: '00px 20px 0px 20px',
         display: 'flex',
         flexDirection: 'column',
         height:'100px',
-        width:'362px',
         fontSize: '24px',
     };
 
-    const titleStyle={
-    //    margin: '40 40 40 auto'
+    const titleStyle={ height: 'fit-content'}
+
+    const inputStyle = {
+        height: '35px',
+        backgroundColor: 'rgba(255, 255, 255, 0.8)',
+        border: '1px solid #ccc',
+        borderRadius: '12px',
+        outline: 'none',
+        color:'rgb(80, 80, 80)',
+        transition: 'border-color 0.3s',
+        padding:'0px 8px',
+    };
+
+    const handleAddClick = () => {
+        let newTitle = text.trim();
+        if (!newTitle) return;
+        
+        updateToDos(newTitle);
        
-    //    margin: margin,
-       height: 'fit-content'
-    }
+    };
 
   const  onclicked =()=>{
     setActive(!isActive)
@@ -43,16 +56,32 @@ let myStyle = {
     return;
    }
 
-return <div style={headerStyle} >
+return ( 
+    <div style={headerStyle} >
         <div className= 'row'style={myStyle} >
             { /* Title vom ToDo Trenner */}
             <div style = {titleStyle} >
                 Create a Group
             </div> 
             {/* Zweites Element, ist ein Div um die UI zu stylen */}
-                <img src={arrowUp} width={30} height={30} style={{ margin: '0px 0px 0px 0px' }}  alt="Open" onClick = {onclicked}   />                      
+                {/* <img src={arrowUp} className='iconStyle'  alt="Open" onClick = {onclicked}   />                       */}
         </div>
-      <AddToDo todoText ={todoText} setText = {setText}  />
+        <div className="row"  >
+            <input
+                style={inputStyle}
+                type="text"
+                value={text}
+                onChange={ (e)=> setState(e.target.value)}
+                placeholder="Gib etwas ein..."
+            />
+            <div
+                onClick={handleAddClick}
+                role="button"
+                aria-label="Add to-do"
+            >
+                <img src={add} alt="+" className='iconStyle' />
+          </div>
+        </div>
     </div>
- 
+ );
 }

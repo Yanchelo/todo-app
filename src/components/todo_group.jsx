@@ -11,6 +11,7 @@ export default function ToDoGroup({ group }) {
          group.entries.map((entry, index) => {     
            return   <ToDoCard 
                   key = {index}
+                  categorie={group.categorie}
                   title = {String(entry.name)} 
                   isFinished = {entry.isFinished} 
               />
