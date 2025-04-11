@@ -1,24 +1,38 @@
-<<<<<<< HEAD
-import {todos} from './todo.json';
+// import { useState } from 'react';
+// import {todos} from './todo.json';
 import ToDoHeader from './TodoHeader';
+import './App.css';
 
-export default function TodayComponent({todos}){
+// eslint-disable-next-line react/prop-types
+// export default function TodayComponent({todos}){
+export default function TodayComponent(){
 
+//   const [todo, setToDo] = useState(todos);
+//   const updateToDo = (updatetedTodO)=> {
+//     let newToDo = todo.map((e)=>{
+
+//       if(e.id== updatetedTodO.id){
+// return updatetedTodO;
+//       }else{
+//         return e;
+//       }
+//     })
+//   }
 
   return  <ToDoHeader
-        title={'Heute'}
-        // height={200}
+        title = 'To-Do-List'
+        fontSize = '24px'
+        height= '50%' 
+        width= '100%' 
+        margin='7px 5px 7px 20px' 
+        // margin= '70px' '5px' '7px' '20px'
+       
     />
-=======
-import {todos} from './todo.json';
-import ToDoHeader from './TodoHeader';
-
-export default function TodayComponent({todos}){
-
-
-  return  <ToDoHeader
-        title={'Heute'}
-        // height={200}
-    />
->>>>>>> b9f8d361d302f0307c0730ed24accc727e76182a
+    // function ToDoHeader({ title, fontSize, height, width, margin }) {
+    //   return (
+    //     <div style={{ fontSize, height, width, margin }}>
+    //       {title}
+    //     </div>
+    //   );
+    // }
 }

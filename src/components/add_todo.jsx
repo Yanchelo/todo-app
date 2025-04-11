@@ -1,50 +1,50 @@
-import '../App.css'
+import React, { useState } from 'react';
+import add from '../assets/plus-icon.png';
+import '../App.css';
+import { useTodo } from '../todo_component'; 
 
 
 // eslint-disable-next-line react/prop-types
-export default function AddToDo( {text, setText} ){
-    const inputStyle={
-            fontSize: '16px',
-            height: '25px',
-            with:'250px',
-            backgroundColor:'rgba(255, 255, 255, 0.7)',
-            /* Hellgraue Border */
-            border: '1px solid #ccc', 
-            /* Runde Ecken mit Radius 12px */
-            borderRadius: '12px',
-            /* Entfernt den Standard-Fokus-Rahmen */
-            outline: 'none',
-            /* Sanfte Übergänge für die Borderfarbe */
-            transition: 'border-color 0.3s',
-          };
-        const addStyle={
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'top',
-            margin:'0px',
-            /* Breite des Buttons */
-            width: '40px',
-            /* Höhe des Buttons */
-            // height: '40px', 
-            /* Weißer Hintergrund */
-            color: '#fff',
-            // border-radius: 12px; /* Abgerundete Ecken */
-            fontSize: '30px', /* Größe des Plus-Zeichens */
-            /* Zeigt an, dass es ein klickbares Element ist */
-            cursor: 'pointer', 
-            /* Sanfte Übergänge */
-            transition: 'background-color 0.3s, transform 0.2s',
-        };
-  
-// eslint-disable-next-line no-unused-vars
-const x = (text)=>{
-    setText(text);
-}
+export default function AddToDo( {categorie}) {
+    const { addEntryToCategory } = useTodo();
+    const[text,setState]= useState('');
+    const inputStyle = {
+        height: '35px',
+        backgroundColor: 'rgba(255, 255, 255, 0.8)',
+        border: '1px solid #ccc',
+        borderRadius: '12px',
+        outline: 'none',
+        color:'rgb(80, 80, 80)',
+        transition: 'border-color 0.3s',
+        padding:'0px 8px',
+    };
 
-return <div className='row'>          
-        <input style={inputStyle} type="text" value={text} placeholder="Gib etwas ein..."/>
-        {/* Zweites Element, ist ein Div um die UI zu stylen */}
-            <p style={addStyle} >+ </p>
-            
-    </div>
+    const handleAddClick = () => {
+        let newTitle = text.trim();
+        if (!newTitle) return;
+        
+        let newToDo ={"name": newTitle, "isFinished": false};
+        addEntryToCategory(categorie, newToDo);
+       
+    };
+
+    return (
+        <div className="row"  >
+            <input
+                style={inputStyle}
+                type="text"
+                value={text}
+                onChange={ (e)=> setState(e.target.value)}
+                placeholder="Gib etwas ein..."
+            />
+            <div
+                // style={addStyle}
+                onClick={handleAddClick}
+                role="button"
+                aria-label="Add to-do"
+            >
+                <img src={add} alt="+" className='iconStyle' />
+            </div>
+        </div>
+    );
 }

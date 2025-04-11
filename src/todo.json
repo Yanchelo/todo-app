@@ -1,42 +1,28 @@
-<<<<<<< HEAD
 {
     "todos":[
         {
-            "categorie": null,
-            "dateTime": "2025,3,5,12,20",
-            "name": "Sport",
-            "durationInMinutes": 30,
-            "haveAlert": false,
-            "isFinished": false
-            },{
-            "categorie": "Wichtig",
-            "dateTime": "2025,3,5,15,50",
-            "name": "Arzt Termin",
-            "durationInMinutes": null,
-            "haveAlert": true,
-            "isFinished": false
-
-        },{}
-    ]
-=======
-{
-    "todos":[
+            "categorie": "Heute",
+            "entries":[
+                {"name": "Sport", "isFinished": false },
+                {"name": "Dehnen", "isFinished": true }
+            ]
+        },
         {
-            "categorie": null,
-            "dateTime": "2025,3,5,12,20",
-            "name": "Sport",
-            "durationInMinutes": 30,
-            "haveAlert": false,
-            "isFinished": false
-            },{
             "categorie": "Wichtig",
-            "dateTime": "2025,3,5,15,50",
-            "name": "Arzt Termin",
-            "durationInMinutes": null,
-            "haveAlert": true,
-            "isFinished": false
+            "entries":[
+                {"name": "Arzt Termin","isFinished": false}
+            ]
+        },{
+            "categorie": "Schule",
+            "entries":[
+                {"name": "Hausaufgaben", "isFinished": false}
+            ]
+        }
+        ,{
+            "categorie": "Test",
+            "entries":[
 
-        },{}
+            ]
+        }
     ]
->>>>>>> b9f8d361d302f0307c0730ed24accc727e76182a
 }
